@@ -3,6 +3,17 @@ package by.epamtc.lab1.task5.util;
 public class MathTool {
 
     public static int countRedundantElements(int[] mas) {
+        boolean isSorted=true;
+        for (int i = 1; i <mas.length; i++) {
+            if(mas[i-1]>mas[i] ){
+                isSorted=false;
+                break;
+            }
+        }
+        if(isSorted){
+            return 0;
+        }
+
         int n = mas.length;
         int length = 0;
         final int MIN = -2147483648;
@@ -14,7 +25,7 @@ public class MathTool {
             extraArray[i] = MAX;
         }
 
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n-1; i++) {
             int j=binarySearch(extraArray,0,n-1,mas[i]);
             if (extraArray[j-1]<mas[i] && mas[i] < extraArray[j]){
                 extraArray[j]=mas[i];

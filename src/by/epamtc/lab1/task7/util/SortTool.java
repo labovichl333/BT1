@@ -2,7 +2,7 @@ package by.epamtc.lab1.task7.util;
 
 public class SortTool {
 
-    public static void sort(int[] array) {
+    public static void sort(double[] array) {
         int h = 1;
         while (h*3 < array.length){
             h = h * 3 + 1;
@@ -15,7 +15,7 @@ public class SortTool {
         }
     }
 
-    private static void hSort(int[] array, int h) {
+    private static void hSort(double[] array, int h) {
         int length = array.length;
         for (int i = h; i < length; i++) {
             for (int j = i; j >= h; j = j - h) {
@@ -27,8 +27,8 @@ public class SortTool {
         }
     }
 
-    private static void swap(int[] array, int j, int i) {
-        int temp=array[i];
+    private static void swap(double[] array, int j, int i) {
+        double temp=array[i];
         array[i]=array[j];
         array[j]=temp;
     }
